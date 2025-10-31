@@ -1,23 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ExitDeck</title>
-  <meta name="description" content="ExitDeck — crypto portfolio exit strategy planner.">
-  <link rel="icon" href="favicon.ico">
-  <link rel="canonical" href="./">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExitDeck — Plan. Track. Exit Smarter.</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0b0c10; --card:#15161a; --muted:#a7b0be; --text:#f3f6fb; --accent:#0ea5ff;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.wrap{max-width:1120px;margin:0 auto;padding:28px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+.logo{display:flex;gap:12px;align-items:center}
+.logo img{width:34px;height:34px}
+.badge{font-weight:700;letter-spacing:.02em}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:40px}
+.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:0 0 10px}
+.lead{color:var(--muted);font-size:clamp(15px,1.6vw,18px);margin:0 0 22px;max-width:60ch}
+.cta{display:inline-block;background:var(--accent);color:#001018;text-decoration:none;font-weight:700;
+     padding:14px 22px;border-radius:12px}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:54px 0}
+.card{background:var(--card);border:1px solid #22252c;border-radius:16px;padding:20px}
+.card h3{margin:0 0 8px}
+footer{margin:60px 0 20px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--accent);text-decoration:none}
+.hero img{width:100%;height:auto;border-radius:16px;border:1px solid #1f232b}
+@media (max-width:880px){ .hero{grid-template-columns:1fr} }
+</style>
 </head>
 <body>
-  <main class="card">
-    <h1>ExitDeck</h1>
-    <p>Plan and execute your crypto exit strategy with confidence.</p>
-    <nav class="links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
+  <div class="wrap">
+    <nav>
+      <div class="logo">
+        <img src="icon.png" alt="ExitDeck icon" />
+        <div class="badge">ExitDeck</div>
+      </div>
+      <a class="cta" href="mailto:support@exitdeck.app">Contact</a>
     </nav>
-    <footer>© 2025 Ryan Davies.</footer>
-  </main>
+
+    <section class="hero">
+      <div>
+        <h1>Master Your Exits. Protect Your Gains.</h1>
+        <p class="lead">Track, plan, and execute tiered take-profits with confidence. iCloud sync, alerts, DCA planning, and a clean Overview so you always know what to do next.</p>
+        <!-- Change this link when TestFlight/App Store is ready -->
+        <a class="cta" href="#">Join TestFlight</a>
+      </div>
+      <img src="hero.png" alt="ExitDeck logo and tagline">
+    </section>
+
+    <!-- Keep your existing text: paste it inside these cards or replace the paragraphs -->
+    <section class="cardgrid">
+      <article class="card">
+        <h3>Tiered Exit Matrix</h3>
+        <p>Set Tier 1 / 2 / 3 targets per asset and see distance to targets with live pricing.</p>
+      </article>
+      <article class="card">
+        <h3>DCA Planner</h3>
+        <p>Plan re-entry scenarios and bear-market accumulation without touching holdings until you save.</p>
+      </article>
+      <article class="card">
+        <h3>iCloud Sync</h3>
+        <p>Your data stays on your devices and in your iCloud. No accounts. No tracking.</p>
+      </article>
+    </section>
+
+    <footer>
+      © 2025 ExitDeck • <a href="mailto:support@exitdeck.app">support@exitdeck.app</a> •
+      <a href="https://exitdeck.github.io/exitdeck-site/privacy.html">Privacy Policy</a>
+    </footer>
+  </div>
 </body>
 </html>
