@@ -1,13 +1,16 @@
-/* ExitDeck landing + privacy page background */
+/* ExitDeck unified site style (Landing + Privacy) */
+
+/* Base setup */
 html, body {
   height: 100%;
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #f4f7fb;
   position: relative;
+  overflow-x: hidden;
 }
 
-/* image + gradient overlay */
+/* Background image + gradient base layer */
 body::before {
   content: "";
   position: fixed;
@@ -18,7 +21,7 @@ body::before {
   z-index: -2;
 }
 
-/* soft glow overlay for depth */
+/* Soft glow overlay for subtle depth */
 body::after {
   content: "";
   position: fixed;
@@ -29,7 +32,7 @@ body::after {
   z-index: -1;
 }
 
-/* card containers */
+/* Card containers (used on privacy + feature boxes) */
 .card {
   background: rgba(17, 26, 47, 0.8);
   border: 1px solid rgba(157, 209, 255, 0.15);
@@ -39,41 +42,80 @@ body::after {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* main wrapper for landing page */
+/* Main wrapper for centered layouts */
 .wrap {
   max-width: 1120px;
   margin: 0 auto;
   padding: 28px;
 }
 
-/* links and footer */
+/* Link + footer styling */
 a {
   color: #9bd1ff;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #c8e4ff;
 }
 
 footer {
   margin-top: 36px;
   text-align: center;
-  opacity: .8;
+  opacity: 0.8;
   color: #a7b0be;
   font-size: 14px;
 }
-/* Improve landing hero legibility */
+
+/* --- Landing Page Hero --- */
 .hero > div {
   background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
   padding: 18px;
   backdrop-filter: blur(6px);
 }
-
 .hero h1 {
   color: #fff;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
-
 .hero .lead {
   color: #dbe8ff;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* --- Privacy Page Tweaks --- */
+body.privacy .wrap {
+  max-width: 980px;
+  padding: 48px 24px;
+}
+body.privacy .card {
+  background: rgba(17, 26, 47, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  padding: 36px 32px;
+}
+body.privacy h1, body.privacy h2, body.privacy strong {
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+}
+body.privacy ul li {
+  margin: 6px 0;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 18px;
+  }
+  .card {
+    padding: 22px;
+  }
+  .hero > div {
+    padding: 14px;
+  }
+  .hero h1 {
+    font-size: 1.6rem;
+  }
 }
