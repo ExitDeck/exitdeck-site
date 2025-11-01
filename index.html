@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ExitDeck — Plan. Track. Exit Smarter.</title>
-  <!-- Favicon and App Icons -->
-<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" href="icon.png"> <!-- fallback -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0b0c10;--bg2:#0f1117;--card:#14161c;--muted:#a7b0be;--text:#f4f7fb;--accent:#0ea5ff;--accent2:#4f46e5}
-*{box-sizing:border-box}html,body{margin:0;padding:0}
-body{font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text)}
-.wrap{max-width:1120px;margin:0 auto;padding:28px}
-nav{display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;gap:12px;align-items:center}
-.logo img{width:36px;height:36px}
-.badge{font-weight:700;letter-spacing:.02em}
-.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
-  color:var(--muted);padding:8px 12px;border-radius:999px;font-size:13px}
-.pill .dot{width:8px;height:8px;border-radius:99px;background:linear-gradient(180deg,var(--accent),var(--accent2));box-shadow:0 0 10px var(--accent)}
-.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:38px}
-.hero h1{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:14px 0 12px}
-.lead{color:var(--muted);font-size:clamp(15px,1.6vw,18px);margin:0 0 22px;max-width:62ch}
-.cta{display:inline-block;background:linear-gradient(180deg,var(--accent),var(--accent2));color:#001018;text-decoration:none;font-weight:700;
-  padding:14px 22px;border-radius:14px;box-shadow:0 8px 24px rgba(14,165,255,.25)}
-.hero img{width:100%;height:auto;border-radius:16px;border:1px solid #1f232b;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:54px 0}
-.card{background:rgba(255,255,255,.04);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
-.card h3{margin:0 0 8px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:14px 0 48px}
-.device{background:linear-gradient(180deg,#0e1016,#10131a);border:1px solid #1e2430;border-radius:28px;padding:10px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
-.device img{width:100%;border-radius:22px}
-.brandstrip{display:flex;gap:18px;flex-wrap:wrap;align-items:center;opacity:.9;margin:18px 0 8px}
-.brandstrip img{height:28px;opacity:.85;filter:grayscale(100%);transition:.2s}
-.brandstrip img:hover{filter:none;opacity:1}
-footer{margin:36px 0 12px;text-align:center;color:var(--muted);font-size:14px}
-footer a{color:var(--accent);text-decoration:none}
-@media (max-width:880px){.hero{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ExitDeck — Plan. Track. Exit Smarter.</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+  :root{
+    --bg:#0b0c10;
+    --bg2:#0f1117;
+    --card:#14161c;
+    --muted:#a7b0be;
+    --text:#f4f7fb;
+    --accent:#0ea5ff;
+    --accent2:#4f46e5;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:url('background.jpg') center/cover fixed,
+               linear-gradient(180deg,var(--bg),var(--bg2));
+    color:var(--text);
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:28px}
+  nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;gap:12px;align-items:center}
+  .logo img{width:36px;height:36px}
+  .badge{font-weight:700;letter-spacing:.02em}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);
+        border:1px solid rgba(255,255,255,.08);color:var(--muted);
+        padding:8px 12px;border-radius:999px;font-size:13px}
+  .pill .dot{width:8px;height:8px;border-radius:99px;
+             background:linear-gradient(180deg,var(--accent),var(--accent2));
+             box-shadow:0 0 10px var(--accent)}
+  .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:38px}
+  .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:14px 0 12px}
+  .lead{color:var(--muted);font-size:clamp(15px,1.6vw,18px);margin:0 0 22px;max-width:62ch}
+  .cta{display:inline-block;background:linear-gradient(180deg,var(--accent),var(--accent2));
+       color:#001018;text-decoration:none;font-weight:700;
+       padding:14px 22px;border-radius:14px;box-shadow:0 8px 24px rgba(14,165,255,.25)}
+  .hero img{width:100%;height:auto;border-radius:16px;border:1px solid #1f232b;
+            box-shadow:0 20px 60px rgba(0,0,0,.35)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+         gap:18px;margin:54px 0}
+  .card{background:rgba(255,255,255,.04);backdrop-filter:blur(6px);
+        border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
+  .card h3{margin:0 0 8px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+           gap:18px;margin:14px 0 48px}
+  .device{background:linear-gradient(180deg,#0e1016,#10131a);border:1px solid #1e2430;
+          border-radius:28px;padding:10px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+  .device img{width:100%;border-radius:22px}
+  .brandstrip{display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+              opacity:.9;margin:18px 0 8px}
+  .brandstrip img{height:28px;opacity:.85;filter:grayscale(100%);transition:.2s}
+  .brandstrip img:hover{filter:none;opacity:1}
+  footer{margin:36px 0 12px;text-align:center;color:var(--muted);font-size:14px}
+  footer a{color:var(--accent);text-decoration:none}
+  @media(max-width:880px){.hero{grid-template-columns:1fr}}
+  </style>
 </head>
+
 <body>
   <div class="wrap">
     <nav>
@@ -58,10 +80,9 @@ footer a{color:var(--accent);text-decoration:none}
         <span class="pill"><span class="dot"></span> iCloud Sync · Coming Soon</span>
         <h1>Master Your Exits. Protect Your Gains.</h1>
         <p class="lead">Track, plan, and execute tiered take-profits with confidence. Live alerts, DCA planning, journal exports, and a clean Overview so you always know what to do next.</p>
-        <!-- Update when TestFlight/App Store is ready -->
         <a class="cta" href="#">Join TestFlight</a>
       </div>
-      <img src="hero.png" alt="ExitDeck logo and tagline">
+      <img src="hero.png" alt="ExitDeck preview">
     </section>
 
     <section class="cards">
@@ -79,24 +100,15 @@ footer a{color:var(--accent);text-decoration:none}
       </article>
     </section>
 
-    <!-- Screenshot gallery -->
     <section class="gallery">
       <div class="device"><img src="screen1.png" alt="ExitDeck screen 1"></div>
       <div class="device"><img src="screen2.png" alt="ExitDeck screen 2"></div>
       <div class="device"><img src="screen3.png" alt="ExitDeck screen 3"></div>
     </section>
 
-    <!-- Optional logos strip (place your SVGs in /logos) -->
-    <div class="brandstrip">
-      <!-- Replace with actual files you add -->
-      <!-- <img src="logos/btc.svg" alt="Bitcoin">
-      <img src="logos/eth.svg" alt="Ethereum">
-      <img src="logos/xrp.svg" alt="XRP"> -->
-    </div>
-
     <footer>
-      © 2025 ExitDeck • <a href="mailto:support@exitdeck.app">support@exitdeck.app</a> •
-      <a href="https://exitdeck.github.io/exitdeck-site/privacy.html">Privacy Policy</a>
+      © 2025 ExitDeck • <a href="mailto:support@exitdeck.app">support@exitdeck.app</a> • 
+      <a href="/privacy.html">Privacy Policy</a>
     </footer>
   </div>
 </body>
