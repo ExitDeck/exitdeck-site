@@ -59,3 +59,21 @@ footer {
   color: #a7b0be;
   font-size: 14px;
 }
+/* Improve landing hero legibility */
+.hero > div {
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px;
+  backdrop-filter: blur(6px);
+}
+
+.hero h1 {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+
+.hero .lead {
+  color: #dbe8ff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+}
