@@ -133,3 +133,34 @@ body.privacy ul li { margin:6px 0; }
   .hero h1 { font-size:1.6rem; }
   .cta { display:none; }
 }
+/* ---- OVERRIDES: logo size + brighter social pills ---- */
+
+/* Bigger brand lockup in the header */
+nav .logo img {
+  width: 44px !important;
+  height: 44px !important;
+  filter: drop-shadow(0 0 6px rgba(14,165,255,.25));
+}
+nav .badge {
+  font-size: 20px !important;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+/* Brighter social pills BEFORE hover */
+nav .socials .social-pill {
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(255,255,255,0.28) !important;   /* brighter idle */
+  border: 1px solid rgba(255,255,255,0.45) !important;
+  box-shadow: 0 0 18px rgba(14,165,255,0.35);
+}
+nav .socials .social-pill img {
+  width: 20px;
+  height: 20px;
+  opacity: 1;                                       /* fully visible */
+  filter: drop-shadow(0 0 6px rgba(14,165,255,0.35));
+}
+
+/* If you had a generic ".socials img" rule dimming icons, neutralize it */
+nav .socials img { opacity: 1 !important; }
