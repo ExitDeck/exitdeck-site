@@ -13,7 +13,8 @@
   <title>ExitDeck — Plan. Track. Exit Smarter.</title>
 
   <!-- Styles -->
-<link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=7">
+
   <!-- Icons -->
   <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png">
@@ -36,22 +37,29 @@
     }
     .wrap{max-width:1120px;margin:0 auto;padding:28px}
 
-    /* NAV */
-    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo img{width:36px;height:36px}
-    .badge{font-weight:700;letter-spacing:.02em}
+    /* --- Top bar: socials + Contact (no left logo) --- */
+    nav.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    nav .spacer{width:1px;height:1px}
 
     .right{display:flex;align-items:center;gap:12px}
-    .socials{display:flex;gap:8px}
+    .socials{display:flex;gap:10px}
+
+    /* Brighter idle social pills */
     .social-pill{
       display:inline-flex;align-items:center;justify-content:center;
-      width:36px;height:36px;border-radius:999px;
-      background:rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.12);
-      backdrop-filter:blur(6px)
+      width:40px;height:40px;border-radius:999px;
+      background:rgba(255,255,255,0.28);
+      border:1px solid rgba(255,255,255,0.45);
+      backdrop-filter:blur(6px);
+      box-shadow:0 0 18px rgba(14,165,255,0.35);
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .social-pill img{width:16px;height:16px;display:block}
+    .social-pill:hover{
+      background:linear-gradient(180deg,var(--accent),var(--accent2));
+      box-shadow:0 0 22px rgba(14,165,255,0.55);
+      transform:translateY(-1px);
+    }
+    .social-pill img{width:20px;height:20px;display:block;opacity:1;filter:drop-shadow(0 0 6px rgba(14,165,255,.35))}
 
     .cta{
       display:inline-block;background:linear-gradient(180deg,var(--accent),var(--accent2));
@@ -59,18 +67,34 @@
       padding:12px 16px;border-radius:14px;box-shadow:0 8px 24px rgba(14,165,255,.25)
     }
 
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:38px}
-    .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:14px 0 12px}
-    .lead{color:var(--muted);font-size:clamp(15px,1.6vw,18px);margin:0 0 22px;max-width:62ch}
-    .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);
-          border:1px solid rgba(255,255,255,.08);color:var(--muted);
+    /* --- Hero: balanced panels --- */
+    .hero{
+      display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:stretch;margin-top:24px
+    }
+    .panel{
+      border-radius:16px;padding:22px;min-height:360px;
+      display:flex;flex-direction:column;justify-content:center
+    }
+    .panel-left{
+      background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.20));
+      border:1px solid rgba(255,255,255,.07);
+      box-shadow:0 20px 60px rgba(0,0,0,.35)
+    }
+    .panel-right{
+      background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.12));
+      border:1px solid rgba(255,255,255,.05);
+      box-shadow:0 16px 48px rgba(0,0,0,.30), inset 0 0 0 1px rgba(157,209,255,.04)
+    }
+
+    .hero h1{font-size:clamp(32px,4.2vw,50px);line-height:1.1;margin:14px 0 10px}
+    .lead{color:var(--muted);font-size:clamp(15px,1.6vw,18px);margin:0 0 18px;max-width:62ch}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.10);
+          border:1px solid rgba(255,255,255,.18);color:#deecff;
           padding:8px 12px;border-radius:999px;font-size:13px}
     .pill .dot{width:8px;height:8px;border-radius:99px;
                background:linear-gradient(180deg,var(--accent),var(--accent2));
                box-shadow:0 0 10px var(--accent)}
-    .hero img{width:100%;height:auto;border-radius:16px;border:1px solid #1f232b;
-              box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    .hero-art{width:100%;height:auto;border-radius:12px;display:block}
 
     /* CARDS + GALLERY */
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:54px 0}
@@ -88,47 +112,50 @@
 
     @media(max-width:880px){
       .hero{grid-template-columns:1fr}
-      .cta{display:none} /* optional on small screens */
+      .panel{min-height:unset}
+      .cta{display:none}
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <nav>
-      <div class="logo">
-        <img src="icon.png" alt="ExitDeck icon">
-        <div class="badge">ExitDeck</div>
-      </div>
-
+    <!-- top bar -->
+    <nav class="topbar">
+      <div class="spacer"></div>
       <div class="right">
         <div class="socials">
           <a href="https://x.com/exitdeckapp" target="_blank" class="social-pill" aria-label="X">
-            <img src="icons/x.svg" alt="X">
+            <img src="icons/x.svg" alt="">
           </a>
           <a href="https://instagram.com/exitdeckapp" target="_blank" class="social-pill" aria-label="Instagram">
-            <img src="icons/instagram.svg" alt="Instagram">
+            <img src="icons/instagram.svg" alt="">
           </a>
           <a href="https://tiktok.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="TikTok">
-            <img src="icons/tiktok.svg" alt="TikTok">
+            <img src="icons/tiktok.svg" alt="">
           </a>
           <a href="https://youtube.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="YouTube">
-            <img src="icons/youtube.svg" alt="YouTube">
+            <img src="icons/youtube.svg" alt="">
           </a>
         </div>
         <a class="cta" href="mailto:support@exitdeck.app">Contact</a>
       </div>
     </nav>
 
+    <!-- hero -->
     <section class="hero">
-      <div>
+      <div class="panel panel-left">
         <span class="pill"><span class="dot"></span> iCloud Sync · Coming Soon</span>
         <h1>Master Your Exits. Protect Your Gains.</h1>
         <p class="lead">Track, plan, and execute tiered take-profits with confidence. Live alerts, DCA planning, journal exports, and a clean Overview so you always know what to do next.</p>
       </div>
-      <img src="hero.png" alt="ExitDeck preview">
+
+      <div class="panel panel-right">
+        <img class="hero-art" src="hero.png" alt="ExitDeck preview">
+      </div>
     </section>
 
+    <!-- features -->
     <section class="cards">
       <article class="card">
         <h3>Tiered Exit Matrix</h3>
@@ -144,6 +171,7 @@
       </article>
     </section>
 
+    <!-- gallery -->
     <section class="gallery">
       <div class="device"><img src="screen1.png" alt="ExitDeck screen 1"></div>
       <div class="device"><img src="screen2.png" alt="ExitDeck screen 2"></div>
