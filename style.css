@@ -111,6 +111,42 @@ body.privacy ul li {
   gap: 14px;
   align-items: center;
 }
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(14,165,255,0.15);
+  transition: all 0.25s ease;
+}
+
+.social-pill:hover {
+  background: linear-gradient(180deg, #0ea5ff, #4f46e5);
+  box-shadow: 0 0 14px rgba(14,165,255,0.45);
+  transform: translateY(-1px);
+}
+
+.social-pill img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 6px rgba(14,165,255,0.3));
+}
+
+.social-pill:hover img {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+}
 
 .socials img {
   width: 22px;
