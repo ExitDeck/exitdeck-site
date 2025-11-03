@@ -139,3 +139,40 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   .panel{min-height:unset}
   .cta{display:none;}
 }
+/* --- POLISH + DEPTH REFINEMENTS --- */
+
+/* 1. Balanced depth for right panel */
+.panel-right {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35),
+              inset 0 0 24px rgba(14,165,255,0.1);
+}
+
+/* 2. Better vertical balance */
+.panel-right {
+  justify-content: flex-start;
+  padding-top: 48px;
+}
+
+/* 3. Text brightness for contrast */
+.hero .lead {
+  color: #e0eeff;
+}
+
+/* 4. Hover lift effect on panels */
+.panel {
+  transition: transform 0.25s ease;
+}
+.panel:hover {
+  transform: translateY(-3px);
+}
+
+/* 5. Gradient accent under heading */
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0ea5ff, #4f46e5);
+  border-radius: 2px;
+  margin-top: 12px;
+}
