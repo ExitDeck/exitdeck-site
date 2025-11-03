@@ -38,21 +38,29 @@
     .wrap{max-width:1120px;margin:0 auto;padding:28px}
 
     /* NAV */
-    nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .logo{display:flex;gap:12px;align-items:center}
-    .logo img{width:36px;height:36px}
-    .badge{font-weight:700;letter-spacing:.02em}
+    <nav>
+  <div class="logo">
+    <img src="icon.png" alt="ExitDeck icon">
+    <div class="badge">ExitDeck</div>
+  </div>
 
-    .socials{display:flex;gap:14px;align-items:center;margin-left:auto}
-    .socials a{display:inline-flex;align-items:center}
-    .socials img{width:22px;height:22px;opacity:.9;transition:opacity .2s ease;
-                 filter: drop-shadow(0 0 3px rgba(0,224,255,.28));}
-    .socials img:hover{opacity:1}
+  <div class="socials">
+    <a href="https://x.com/exitdeckapp" target="_blank" class="social-pill" aria-label="X">
+      <img src="icons/x.svg" alt="X">
+    </a>
+    <a href="https://instagram.com/exitdeckapp" target="_blank" class="social-pill" aria-label="Instagram">
+      <img src="icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://tiktok.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="TikTok">
+      <img src="icons/tiktok.svg" alt="TikTok">
+    </a>
+    <a href="https://youtube.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="YouTube">
+      <img src="icons/youtube.svg" alt="YouTube">
+    </a>
+  </div>
 
-    .cta{display:inline-block;background:linear-gradient(180deg,var(--accent),var(--accent2));
-         color:#001018;text-decoration:none;font-weight:700;
-         padding:12px 18px;border-radius:14px;box-shadow:0 8px 24px rgba(14,165,255,.25)}
-
+  <a class="cta" href="mailto:support@exitdeck.app">Contact</a>
+</nav>
     /* HERO */
     .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:38px}
     .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:14px 0 12px}
