@@ -121,3 +121,42 @@ footer{ margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-size
 
 /* guard against any global img rules */
 .card img.shot { max-width: 100% !important; height: auto !important; }
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.press-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #cfe6ff;
+  transition: all 0.25s ease;
+}
+
+.press-item:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.press-item img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.press-item span {
+  font-size: 14px;
+  opacity: 0.9;
+}
