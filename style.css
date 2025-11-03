@@ -103,6 +103,23 @@ body.privacy h1, body.privacy h2, body.privacy strong {
 body.privacy ul li {
   margin: 6px 0;
 }
+.socials {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.socials img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  filter: drop-shadow(0 0 3px rgba(0,224,255,0.3));
+}
+
+.socials img:hover {
+  opacity: 1;
+}
 
 /* Responsive improvements */
 @media (max-width: 768px) {
