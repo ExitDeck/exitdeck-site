@@ -103,6 +103,9 @@ body.privacy h1, body.privacy h2, body.privacy strong {
 body.privacy ul li {
   margin: 6px 0;
 }
+.socials a { color:#9bd1ff; }           /* base tint */
+.socials a:hover { color:#e7f3ff; }
+.socials svg { filter: drop-shadow(0 0 6px rgba(14,165,255,.25)); }
 .socials {
   display: flex;
   gap: 14px;
