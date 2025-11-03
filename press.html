@@ -4,77 +4,83 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ExitDeck Press Kit</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=8">
   <style>
-    /* Grid */
-    .press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:40px}
-    .press-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:12px;text-align:center;backdrop-filter:blur(6px);transition:transform .25s,box-shadow .25s}
-    .press-item:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.4);background:rgba(255,255,255,.08)}
-    .press-item img{width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,.05);display:block;margin-bottom:10px}
-    .press-item span{display:block;font-size:14px;color:#cfe6ff;opacity:.9;letter-spacing:.02em}
-
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(5,8,13,.82);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:9999}
-    .lightbox.open{display:flex}
-    .lb-wrap{max-width:92vw;max-height:88vh;display:flex;flex-direction:column;gap:10px;align-items:center}
-    .lb-img{max-width:92vw;max-height:78vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.15)}
-    .lb-cap{color:#dbe8ff;font-size:14px;opacity:.9;text-align:center}
-    .lb-close,.lb-prev,.lb-next{
-      position:absolute;top:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
-      color:#eaf3ff;padding:10px 12px;border-radius:12px;cursor:pointer;backdrop-filter:blur(6px)
-    }
-    .lb-close{right:18px}
-    .lb-prev{left:18px;top:50%;transform:translateY(-50%)}
-    .lb-next{right:18px;top:50%;transform:translateY(-50%)}
-    .lb-close:hover,.lb-prev:hover,.lb-next:hover{background:linear-gradient(180deg,#0ea5ff,#4f46e5)}
-    @media (max-width:640px){.lb-prev,.lb-next{top:auto;bottom:18px;transform:none}}
-    footer{margin-top:40px;text-align:center;color:#a7b0be;font-size:14px;opacity:.8}
-    footer a{color:#9bd1ff;text-decoration:none}
-    footer a:hover{text-decoration:underline}
+    .press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:34px}
+    .press-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:12px;text-align:center;backdrop-filter:blur(6px)}
+    .press-item a{display:block;border-radius:12px;overflow:hidden}
+    .press-item img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+    .press-item .cap{margin-top:8px;font-size:14px;color:#cfe6ff;opacity:.9}
   </style>
 </head>
-
 <body>
   <div class="wrap">
     <h1>ExitDeck Press Kit</h1>
     <p>Official banners, screenshots, and branding for media use.</p>
 
-    <div class="press-grid" id="pressGrid">
-      <a class="press-item" href="press/Title%20Page%20ExitDeck%20iPhone.png" data-caption="Title Page">
-        <img src="press/Title%20Page%20ExitDeck%20iPhone.png" alt="Title Page"><span>Title Page</span>
-      </a>
+    <div class="press-grid">
+      <div class="press-item">
+        <a href="press/Title%20Page%20ExitDeck%20iPhone.png" target="_blank" download>
+          <img src="press/Title%20Page%20ExitDeck%20iPhone.png" alt="Title Page">
+        </a>
+        <div class="cap">Title Page</div>
+      </div>
 
-      <a class="press-item" href="press/1%20“Master%20Your%20Exits”.png" data-caption="Master Your Exits">
-        <img src="press/1%20“Master%20Your%20Exits”.png" alt="Master Your Exits"><span>Master Your Exits</span>
-      </a>
+      <div class="press-item">
+        <a href="press/1%20%E2%80%9CMaster%20Your%20Exits%E2%80%9D.png" target="_blank" download>
+          <img src="press/1%20%E2%80%9CMaster%20Your%20Exits%E2%80%9D.png" alt="Master Your Exits">
+        </a>
+        <div class="cap">“Master Your Exits”</div>
+      </div>
 
-      <a class="press-item" href="press/2%20“Track%20your%20portfolio”.png" data-caption="Track your portfolio">
-        <img src="press/2%20“Track%20your%20portfolio”.png" alt="Track your portfolio"><span>Track your portfolio</span>
-      </a>
+      <div class="press-item">
+        <a href="press/2%20%E2%80%9CTrack%20your%20portfolio%E2%80%9D.png" target="_blank" download>
+          <img src="press/2%20%E2%80%9CTrack%20your%20portfolio%E2%80%9D.png" alt="Track your portfolio">
+        </a>
+        <div class="cap">“Track your portfolio”</div>
+      </div>
 
-      <a class="press-item" href="press/3%20“See%20your%20allocations”.png" data-caption="See your allocations">
-        <img src="press/3%20“See%20your%20allocations”.png" alt="See your allocations"><span>See your allocations</span>
-      </a>
+      <div class="press-item">
+        <a href="press/3%20%E2%80%9CSee%20your%20allocations%E2%80%9D.png" target="_blank" download>
+          <img src="press/3%20%E2%80%9CSee%20your%20allocations%E2%80%9D.png" alt="See your allocations">
+        </a>
+        <div class="cap">“See your allocations”</div>
+      </div>
 
-      <a class="press-item" href="press/4%20“Log%20every%20trade”.png" data-caption="Log every trade">
-        <img src="press/4%20“Log%20every%20trade”.png" alt="Log every trade"><span>Log every trade</span>
-      </a>
+      <div class="press-item">
+        <a href="press/4%20%E2%80%9CLog%20every%20trade%E2%80%9D.png" target="_blank" download>
+          <img src="press/4%20%E2%80%9CLog%20every%20trade%E2%80%9D.png" alt="Log every trade">
+        </a>
+        <div class="cap">“Log every trade”</div>
+      </div>
 
-      <a class="press-item" href="press/5%20“Stay%20ahead%20with%20crypto%20insights”.png" data-caption="Stay ahead with crypto insights">
-        <img src="press/5%20“Stay%20ahead%20with%20crypto%20insights”.png" alt="Stay ahead with crypto insights"><span>Stay ahead with crypto insights</span>
-      </a>
+      <div class="press-item">
+        <a href="press/5%20%E2%80%9CStay%20ahead%20with%20crypto%20insights%E2%80%9D.png" target="_blank" download>
+          <img src="press/5%20%E2%80%9CStay%20ahead%20with%20crypto%20insights%E2%80%9D.png" alt="Stay ahead with crypto insights">
+        </a>
+        <div class="cap">“Stay ahead with crypto insights”</div>
+      </div>
 
-      <a class="press-item" href="press/Banner1.png" data-caption="Banner 1">
-        <img src="press/Banner1.png" alt="Banner 1"><span>Banner 1</span>
-      </a>
+      <div class="press-item">
+        <a href="press/Banner1.png" target="_blank" download>
+          <img src="press/Banner1.png" alt="Banner 1">
+        </a>
+        <div class="cap">Banner 1</div>
+      </div>
 
-      <a class="press-item" href="press/Banner2.png" data-caption="Banner 2">
-        <img src="press/Banner2.png" alt="Banner 2"><span>Banner 2</span>
-      </a>
+      <div class="press-item">
+        <a href="press/Banner2.png" target="_blank" download>
+          <img src="press/Banner2.png" alt="Banner 2">
+        </a>
+        <div class="cap">Banner 2</div>
+      </div>
 
-      <a class="press-item" href="press/icon.png" data-caption="App Icon">
-        <img src="press/icon.png" alt="App Icon"><span>App Icon</span>
-      </a>
+      <div class="press-item">
+        <a href="press/icon.png" target="_blank" download>
+          <img src="press/icon.png" alt="App Icon">
+        </a>
+        <div class="cap">App Icon</div>
+      </div>
     </div>
 
     <footer>
@@ -82,66 +88,5 @@
       <a href="index.html">Back to site</a>
     </footer>
   </div>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Image preview">
-    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
-    <button class="lb-prev"  id="lbPrev"  aria-label="Previous">‹</button>
-    <button class="lb-next"  id="lbNext"  aria-label="Next">›</button>
-    <div class="lb-wrap">
-      <img id="lbImg" class="lb-img" alt="">
-      <div id="lbCap" class="lb-cap"></div>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const items = Array.from(document.querySelectorAll('.press-item'));
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lbImg');
-      const lbCap = document.getElementById('lbCap');
-      const btnClose = document.getElementById('lbClose');
-      const btnPrev = document.getElementById('lbPrev');
-      const btnNext = document.getElementById('lbNext');
-      let idx = 0;
-
-      function openAt(i){
-        idx = (i + items.length) % items.length;
-        const a = items[idx];
-        lbImg.src = a.getAttribute('href');
-        lbImg.alt = a.querySelector('img').alt || '';
-        lbCap.textContent = a.dataset.caption || lbImg.alt || '';
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeLb(){
-        lb.classList.remove('open');
-        lbImg.src = '';
-        document.body.style.overflow = '';
-      }
-      function next(){ openAt(idx + 1); }
-      function prev(){ openAt(idx - 1); }
-
-      items.forEach((a,i)=>{
-        a.addEventListener('click', (e)=>{
-          e.preventDefault();
-          openAt(i);
-        });
-      });
-
-      btnClose.addEventListener('click', closeLb);
-      btnNext.addEventListener('click', next);
-      btnPrev.addEventListener('click', prev);
-
-      lb.addEventListener('click', (e)=>{ if (e.target === lb) closeLb(); });
-
-      window.addEventListener('keydown', (e)=>{
-        if(!lb.classList.contains('open')) return;
-        if(e.key === 'Escape') closeLb();
-        if(e.key === 'ArrowRight') next();
-        if(e.key === 'ArrowLeft') prev();
-      });
-    })();
-  </script>
 </body>
 </html>
