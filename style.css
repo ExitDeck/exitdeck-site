@@ -80,7 +80,14 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   opacity:1;
   filter:drop-shadow(0 0 6px rgba(14,165,255,.35));
 }
-
+.site-tagline {
+  font-size: 15px;
+  color: #a7b0be;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
 /* CTA */
 .cta {
   display:inline-block;
