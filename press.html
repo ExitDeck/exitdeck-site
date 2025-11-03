@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ExitDeck Press Kit</title>
   <link rel="stylesheet" href="style.css?v=6">
+
   <style>
     .press-grid {
       display: grid;
@@ -12,6 +13,7 @@
       gap: 22px;
       margin-top: 40px;
     }
+
     .press-item {
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.1);
@@ -19,13 +21,41 @@
       padding: 12px;
       text-align: center;
       backdrop-filter: blur(6px);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
+
+    .press-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+      background: rgba(255,255,255,.08);
+    }
+
     .press-item img {
       width: 100%;
       height: auto;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,.05);
+      display: block;
+      margin-bottom: 10px;
     }
+
+    .press-item span {
+      display: block;
+      font-size: 14px;
+      color: #cfe6ff;
+      opacity: 0.85;
+      letter-spacing: .02em;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #a7b0be;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    footer a { color: #9bd1ff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 
@@ -35,20 +65,56 @@
     <p>Official banners, screenshots, and branding for media use.</p>
 
     <div class="press-grid">
-      <div class="press-item"><img src="press/Title%20Page%20ExitDeck%20iPhone.png" alt="Title Page"></div>
-      <div class="press-item"><img src="press/1%20“Master%20Your%20Exits”.png" alt="Master Your Exits"></div>
-      <div class="press-item"><img src="press/2%20“Track%20your%20portfolio”.png" alt="Track your portfolio"></div>
-      <div class="press-item"><img src="press/3%20“See%20your%20allocations”.png" alt="See your allocations"></div>
-      <div class="press-item"><img src="press/4%20“Log%20every%20trade”.png" alt="Log every trade"></div>
-      <div class="press-item"><img src="press/5%20“Stay%20ahead%20with%20crypto%20insights”.png" alt="Stay ahead with crypto insights"></div>
-      <div class="press-item"><img src="press/Banner1.png" alt="Banner 1"></div>
-      <div class="press-item"><img src="press/Banner2.png" alt="Banner 2"></div>
-      <div class="press-item"><img src="press/icon.png" alt="App Icon"></div>
+
+      <a href="press/Title%20Page%20ExitDeck%20iPhone.png" target="_blank" class="press-item">
+        <img src="press/Title%20Page%20ExitDeck%20iPhone.png" alt="Title Page">
+        <span>Title Page</span>
+      </a>
+
+      <a href="press/1%20“Master%20Your%20Exits”.png" target="_blank" class="press-item">
+        <img src="press/1%20“Master%20Your%20Exits”.png" alt="Master Your Exits">
+        <span>Master Your Exits</span>
+      </a>
+
+      <a href="press/2%20“Track%20your%20portfolio”.png" target="_blank" class="press-item">
+        <img src="press/2%20“Track%20your%20portfolio”.png" alt="Track your portfolio">
+        <span>Track your portfolio</span>
+      </a>
+
+      <a href="press/3%20“See%20your%20allocations”.png" target="_blank" class="press-item">
+        <img src="press/3%20“See%20your%20allocations”.png" alt="See your allocations">
+        <span>See your allocations</span>
+      </a>
+
+      <a href="press/4%20“Log%20every%20trade”.png" target="_blank" class="press-item">
+        <img src="press/4%20“Log%20every%20trade”.png" alt="Log every trade">
+        <span>Log every trade</span>
+      </a>
+
+      <a href="press/5%20“Stay%20ahead%20with%20crypto%20insights”.png" target="_blank" class="press-item">
+        <img src="press/5%20“Stay%20ahead%20with%20crypto%20insights”.png" alt="Stay ahead with crypto insights">
+        <span>Stay ahead with crypto insights</span>
+      </a>
+
+      <a href="press/Banner1.png" target="_blank" class="press-item">
+        <img src="press/Banner1.png" alt="Banner 1">
+        <span>Banner 1</span>
+      </a>
+
+      <a href="press/Banner2.png" target="_blank" class="press-item">
+        <img src="press/Banner2.png" alt="Banner 2">
+        <span>Banner 2</span>
+      </a>
+
+      <a href="press/icon.png" target="_blank" class="press-item">
+        <img src="press/icon.png" alt="App Icon">
+        <span>App Icon</span>
+      </a>
     </div>
 
     <footer>
-      <p>© 2025 ExitDeck • <a href="mailto:support@exitdeck.app">support@exitdeck.app</a> •
-      <a href="index.html">Back to site</a></p>
+      © 2025 ExitDeck • <a href="mailto:support@exitdeck.app">support@exitdeck.app</a> •
+      <a href="index.html">Back to site</a>
     </footer>
   </div>
 </body>
