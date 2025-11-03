@@ -133,34 +133,39 @@ body.privacy ul li { margin:6px 0; }
   .hero h1 { font-size:1.6rem; }
   .cta { display:none; }
 }
-/* ---- OVERRIDES: logo size + brighter social pills ---- */
+/* --- FINAL OVERRIDES: logo + brighter social pills --- */
 
-/* Bigger brand lockup in the header */
+/* Larger glowing logo */
 nav .logo img {
-  width: 44px !important;
-  height: 44px !important;
-  filter: drop-shadow(0 0 6px rgba(14,165,255,.25));
+  width: 48px !important;
+  height: 48px !important;
+  filter: drop-shadow(0 0 8px rgba(14,165,255,0.4));
+  transform: translateY(2px);
 }
 nav .badge {
-  font-size: 20px !important;
+  font-size: 22px !important;
   font-weight: 700;
+  color: #e7f3ff;
   letter-spacing: .02em;
 }
 
-/* Brighter social pills BEFORE hover */
+/* Brighter visible social icons (idle state) */
 nav .socials .social-pill {
   width: 40px !important;
   height: 40px !important;
-  background: rgba(255,255,255,0.28) !important;   /* brighter idle */
-  border: 1px solid rgba(255,255,255,0.45) !important;
-  box-shadow: 0 0 18px rgba(14,165,255,0.35);
+  background: rgba(255,255,255,0.32) !important;  /* brighter idle */
+  border: 1px solid rgba(255,255,255,0.5) !important;
+  box-shadow: 0 0 18px rgba(14,165,255,0.4);
+  transition: all 0.25s ease;
 }
 nav .socials .social-pill img {
   width: 20px;
   height: 20px;
-  opacity: 1;                                       /* fully visible */
-  filter: drop-shadow(0 0 6px rgba(14,165,255,0.35));
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(14,165,255,0.4));
 }
-
-/* If you had a generic ".socials img" rule dimming icons, neutralize it */
-nav .socials img { opacity: 1 !important; }
+nav .socials .social-pill:hover {
+  background: linear-gradient(180deg, #0ea5ff, #4f46e5);
+  box-shadow: 0 0 22px rgba(14,165,255,0.6);
+  transform: translateY(-2px);
+}
