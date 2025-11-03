@@ -1,6 +1,6 @@
 /* ExitDeck unified site style (Landing + Privacy) */
 
-/* Base setup */
+/* Base */
 html, body {
   height: 100%;
   margin: 0;
@@ -10,7 +10,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Background image + gradient base layer */
+/* Background layers */
 body::before {
   content: "";
   position: fixed;
@@ -20,8 +20,6 @@ body::before {
     linear-gradient(180deg, #0b0c10 0%, #0f1117 100%);
   z-index: -2;
 }
-
-/* Soft glow overlay for subtle depth */
 body::after {
   content: "";
   position: fixed;
@@ -32,146 +30,84 @@ body::after {
   z-index: -1;
 }
 
-/* Card containers (used on privacy + feature boxes) */
-.card {
-  background: rgba(17, 26, 47, 0.8);
-  border: 1px solid rgba(157, 209, 255, 0.15);
+/* Layout */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 28px; }
+
+/* Card */
+.card{
+  background: rgba(17,26,47,.8);
+  border: 1px solid rgba(157,209,255,.15);
   border-radius: 16px;
   padding: 28px;
   backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,.3);
 }
 
-/* Main wrapper for centered layouts */
-.wrap {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 28px;
-}
+/* Links + footer */
+a{ color:#9bd1ff; text-decoration:none; transition:color .2s ease; }
+a:hover{ color:#c8e4ff; }
+footer{ margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-size:14px; }
 
-/* Link + footer styling */
-a {
-  color: #9bd1ff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-a:hover {
-  color: #c8e4ff;
-}
+/* --- Nav (matches latest index.html) --- */
+nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.logo{ display:flex; gap:12px; align-items:center; }
+.logo img{ width:36px; height:36px; }
+.badge{ font-weight:700; letter-spacing:.02em; }
+.right{ display:flex; align-items:center; gap:12px; }
 
-footer {
-  margin-top: 36px;
-  text-align: center;
-  opacity: 0.8;
-  color: #a7b0be;
-  font-size: 14px;
+/* Social pills */
+.socials{ display:flex; gap:10px; align-items:center; }
+.social-pill{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(6px);
+  box-shadow:0 0 10px rgba(14,165,255,.15);
+  transition: all .25s ease;
 }
-
-/* --- Landing Page Hero --- */
-.hero > div {
-  background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  padding: 18px;
-  backdrop-filter: blur(6px);
-}
-.hero h1 {
-  color: #fff;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
-}
-.hero .lead {
-  color: #dbe8ff;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
-}
-
-/* --- Privacy Page Tweaks --- */
-body.privacy .wrap {
-  max-width: 980px;
-  padding: 48px 24px;
-}
-body.privacy .card {
-  background: rgba(17, 26, 47, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
-  border-radius: 20px;
-  padding: 36px 32px;
-}
-body.privacy h1, body.privacy h2, body.privacy strong {
-  color: #fff;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-}
-body.privacy ul li {
-  margin: 6px 0;
-}
-.socials a { color:#9bd1ff; }           /* base tint */
-.socials a:hover { color:#e7f3ff; }
-.socials svg { filter: drop-shadow(0 0 6px rgba(14,165,255,.25)); }
-.socials {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-.socials {
-  display: flex;
-  gap: 10px;
-}
-
-.social-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 10px rgba(14,165,255,0.15);
-  transition: all 0.25s ease;
-}
-
-.social-pill:hover {
-  background: linear-gradient(180deg, #0ea5ff, #4f46e5);
-  box-shadow: 0 0 14px rgba(14,165,255,0.45);
+.social-pill:hover{
+  background:linear-gradient(180deg,#0ea5ff,#4f46e5);
+  box-shadow:0 0 14px rgba(14,165,255,.45);
   transform: translateY(-1px);
 }
+.social-pill img{ width:18px; height:18px; opacity:.9; filter: drop-shadow(0 0 6px rgba(14,165,255,.3)); }
+.social-pill:hover img{ opacity:1; filter: drop-shadow(0 0 8px rgba(255,255,255,.6)); }
 
-.social-pill img {
-  width: 18px;
-  height: 18px;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 6px rgba(14,165,255,0.3));
+/* CTA */
+.cta{
+  display:inline-block; background:linear-gradient(180deg,#0ea5ff,#4f46e5);
+  color:#001018; text-decoration:none; font-weight:700;
+  padding:12px 16px; border-radius:14px; box-shadow:0 8px 24px rgba(14,165,255,.25);
 }
 
-.social-pill:hover img {
-  opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+/* --- Hero --- */
+.hero > div{
+  background: rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:16px; padding:18px; backdrop-filter:blur(6px);
 }
+.hero h1{ color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.45); }
+.hero .lead{ color:#dbe8ff; text-shadow:0 1px 8px rgba(0,0,0,.35); }
 
-.socials img {
-  width: 22px;
-  height: 22px;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-  filter: drop-shadow(0 0 3px rgba(0,224,255,0.3));
+/* --- Privacy page tweaks --- */
+body.privacy .wrap{ max-width:980px; padding:48px 24px; }
+body.privacy .card{
+  background: rgba(17,26,47,.7);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 12px 48px rgba(0,0,0,.35);
+  border-radius:20px; padding:36px 32px;
 }
-
-.socials img:hover {
-  opacity: 1;
+body.privacy h1, body.privacy h2, body.privacy strong{
+  color:#fff; text-shadow:0 1px 10px rgba(0,0,0,.4);
 }
+body.privacy ul li{ margin:6px 0; }
 
-/* Responsive improvements */
-@media (max-width: 768px) {
-  .wrap {
-    padding: 18px;
-  }
-  .card {
-    padding: 22px;
-  }
-  .hero > div {
-    padding: 14px;
-  }
-  .hero h1 {
-    font-size: 1.6rem;
-  }
+/* Responsive */
+@media (max-width: 880px){
+  .wrap{ padding:18px; }
+  .card{ padding:22px; }
+  .hero > div{ padding:14px; }
+  .hero h1{ font-size:1.6rem; }
+  .cta{ display:none; }
 }
