@@ -55,125 +55,130 @@ a:hover { color:#c8e4ff; }
 footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-size:14px; }
 
 /* ===================== */
-/* Top bar: no left logo, socials + contact on right */
+/* Top Bar */
 /* ===================== */
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0}
-.topbar .spacer{width:1px;height:1px}
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:8px 0 6px;
+}
+
+/* Tagline inside topbar */
+.site-tagline {
+  color:#cfe6ff;
+  opacity:.9;
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  position:relative;
+  top:2px;
+}
+.site-tagline::after {
+  content:"";
+  display:block;
+  height:1px;
+  margin-top:8px;
+  background:linear-gradient(90deg, rgba(14,165,255,.7), rgba(79,70,229,0) 65%);
+  border-radius:1px;
+  width:140px;
+}
 
 /* Social Pills (Bright Idle) */
-.social-pill{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:40px;height:40px;border-radius:999px;
+.socials {
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.social-pill {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border-radius:999px;
   background:rgba(255,255,255,0.28);
   border:1px solid rgba(255,255,255,0.45);
   box-shadow:0 0 18px rgba(14,165,255,0.35);
   backdrop-filter:blur(6px);
   transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
-.social-pill:hover{
+.social-pill:hover {
   background:linear-gradient(180deg,#0ea5ff,#4f46e5);
   box-shadow:0 0 22px rgba(14,165,255,0.55);
   transform:translateY(-1px);
 }
-.social-pill img{
-  width:20px;height:20px;
+.social-pill img {
+  width:20px;
+  height:20px;
   opacity:1;
   filter:drop-shadow(0 0 6px rgba(14,165,255,.35));
 }
-.site-tagline {
-  font-size: 15px;
-  color: #a7b0be;
-  opacity: 0.85;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin-top: 8px;
-}
-/* CTA */
+
+/* Contact Button */
 .cta {
   display:inline-block;
   background:linear-gradient(180deg,#0ea5ff,#4f46e5);
-  color:#001018; text-decoration:none; font-weight:700;
-  padding:12px 16px; border-radius:14px;
+  color:#001018;
+  text-decoration:none;
+  font-weight:700;
+  padding:12px 16px;
+  border-radius:14px;
   box-shadow:0 8px 24px rgba(14,165,255,.25);
 }
 
 /* ===================== */
-/* Hero Section: Equal Panels */
+/* Hero Section */
 /* ===================== */
-.hero{
+.hero {
   display:grid;
   grid-template-columns:1.15fr 1fr;
   gap:28px;
   align-items:stretch;
-  margin-top:24px;
+  margin-top:10px;
 }
-.panel{
+
+.panel {
   border-radius:16px;
   padding:22px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   min-height:360px;
+  transition: transform 0.25s ease;
 }
-.panel-left{
+.panel:hover {
+  transform: translateY(-3px);
+}
+.panel-left {
   background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.20));
   border:1px solid rgba(255,255,255,.07);
   box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
-.panel-right{
+.panel-right {
   background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.12));
   border:1px solid rgba(255,255,255,.05);
-  box-shadow:0 16px 48px rgba(0,0,0,.30), inset 0 0 0 1px rgba(157,209,255,.04);
+  box-shadow:0 20px 60px rgba(0,0,0,0.35), inset 0 0 24px rgba(14,165,255,0.1);
+  justify-content:flex-start;
+  padding-top:48px;
 }
-.hero-art{
+
+.hero-art {
   width:100%;
   height:auto;
   border-radius:12px;
   display:block;
 }
 
-/* Headline */
-.hero h1{
+/* Headline + Text */
+.hero h1 {
   font-size:clamp(32px,4.2vw,50px);
   line-height:1.1;
   margin:14px 0 10px;
+  color:#fff;
 }
-.hero .lead{max-width:62ch}
-
-/* Responsive */
-@media (max-width:880px){
-  .hero{grid-template-columns:1fr}
-  .panel{min-height:unset}
-  .cta{display:none;}
-}
-/* --- POLISH + DEPTH REFINEMENTS --- */
-
-/* 1. Balanced depth for right panel */
-.panel-right {
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35),
-              inset 0 0 24px rgba(14,165,255,0.1);
-}
-
-/* 2. Better vertical balance */
-.panel-right {
-  justify-content: flex-start;
-  padding-top: 48px;
-}
-
-/* 3. Text brightness for contrast */
-.hero .lead {
-  color: #e0eeff;
-}
-
-/* 4. Hover lift effect on panels */
-.panel {
-  transition: transform 0.25s ease;
-}
-.panel:hover {
-  transform: translateY(-3px);
-}
-
-/* 5. Gradient accent under heading */
 .hero h1::after {
   content: "";
   display: block;
@@ -182,4 +187,30 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   background: linear-gradient(90deg, #0ea5ff, #4f46e5);
   border-radius: 2px;
   margin-top: 12px;
+}
+.hero .lead {
+  color:#e0eeff;
+  max-width:62ch;
+}
+
+/* ===================== */
+/* Responsive */
+/* ===================== */
+@media (max-width:880px){
+  .hero {
+    grid-template-columns:1fr;
+  }
+  .panel {
+    min-height:unset;
+  }
+  .cta {
+    display:none;
+  }
+  .site-tagline {
+    font-size:12px;
+    letter-spacing:.06em;
+  }
+  .site-tagline::after {
+    margin-top:6px;
+  }
 }
