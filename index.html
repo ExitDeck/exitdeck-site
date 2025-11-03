@@ -13,157 +13,64 @@
   <title>ExitDeck — Plan. Track. Exit Smarter.</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 
- <!-- Favicons -->
-<link rel="icon" href="/favicon.ico?v=9">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=9">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=9">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=9">
-<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=9">
-<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=9">
-<meta name="theme-color" content="#0b0c10">
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico?v=9">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=9">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=9">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=9">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png?v=9">
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png?v=9">
+  <meta name="theme-color" content="#0b0c10">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0b0c10; --bg2:#0f1117; --card:#14161c;
-      --muted:#a7b0be; --text:#f4f7fb; --accent:#0ea5ff; --accent2:#4f46e5;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:url('background.png') center/cover fixed,
-                 linear-gradient(180deg,var(--bg),var(--bg2));
-      color:var(--text);
-    }
-    .wrap{max-width:1120px;margin:0 auto;padding:28px}
-
-    /* --- Top bar: socials + Contact (no left logo) --- */
-    nav.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    nav .spacer{width:1px;height:1px}
-
-    .right{display:flex;align-items:center;gap:12px}
-    .socials{display:flex;gap:10px}
-
-    /* Brighter idle social pills */
-    .social-pill{
-      display:inline-flex;align-items:center;justify-content:center;
-      width:40px;height:40px;border-radius:999px;
-      background:rgba(255,255,255,0.28);
-      border:1px solid rgba(255,255,255,0.45);
-      backdrop-filter:blur(6px);
-      box-shadow:0 0 18px rgba(14,165,255,0.35);
-      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
-    }
-    .social-pill:hover{
-      background:linear-gradient(180deg,var(--accent),var(--accent2));
-      box-shadow:0 0 22px rgba(14,165,255,0.55);
-      transform:translateY(-1px);
-    }
-    .social-pill img{width:20px;height:20px;display:block;opacity:1;filter:drop-shadow(0 0 6px rgba(14,165,255,.35))}
-
-    .cta{
-      display:inline-block;background:linear-gradient(180deg,var(--accent),var(--accent2));
-      color:#001018;text-decoration:none;font-weight:700;
-      padding:12px 16px;border-radius:14px;box-shadow:0 8px 24px rgba(14,165,255,.25)
-    }
-    /* --- Hero: balanced panels --- */
-    .hero{
-      display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:stretch;margin-top:24px
-    }
-    .panel{
-      border-radius:16px;padding:22px;min-height:360px;
-      display:flex;flex-direction:column;justify-content:center
-    }
-    .panel-left{
-      background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.20));
-      border:1px solid rgba(255,255,255,.07);
-      box-shadow:0 20px 60px rgba(0,0,0,.35)
-    }
-    .panel-right{
-      background:linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.12));
-      border:1px solid rgba(255,255,255,.05);
-      box-shadow:0 16px 48px rgba(0,0,0,.30), inset 0 0 0 1px rgba(157,209,255,.04)
-    }
-
-    .hero h1{font-size:clamp(32px,4.2vw,50px);line-height:1.1;margin:14px 0 10px}
-    .lead{color:var(--muted);font-size:clamp(15px,1.6vw,18px);margin:0 0 18px;max-width:62ch}
-    .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.10);
-          border:1px solid rgba(255,255,255,.18);color:#deecff;
-          padding:8px 12px;border-radius:999px;font-size:13px}
-    .pill .dot{width:8px;height:8px;border-radius:99px;
-               background:linear-gradient(180deg,var(--accent),var(--accent2));
-               box-shadow:0 0 10px var(--accent)}
-    .hero-art{width:100%;height:auto;border-radius:12px;display:block}
-
-    /* CARDS + GALLERY */
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:54px 0}
-    .card{background:rgba(255,255,255,.04);backdrop-filter:blur(6px);
-          border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
-    .card h3{margin:0 0 8px}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:14px 0 48px}
-    .device{background:linear-gradient(180deg,#0e1016,#10131a);border:1px solid #1e2430;
-            border-radius:28px;padding:10px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
-    .device img{width:100%;border-radius:22px}
-
-    /* FOOTER */
-    footer{margin:36px 0 12px;text-align:center;color:var(--muted);font-size:14px}
-    footer a{color:var(--accent);text-decoration:none}
-
-    @media(max-width:880px){
-      .hero{grid-template-columns:1fr}
-      .panel{min-height:unset}
-      .cta{display:none}
-    }
-  </style>
 </head>
 
 <body>
   <div class="wrap">
-  <!-- top bar -->
-<nav class="topbar">
-  <div class="site-tagline">The smarter way to plan crypto exits.</div>
 
-  <div class="right">
-    <div class="socials">
-      <a href="https://x.com/exitdeckapp" target="_blank" class="social-pill" aria-label="X">
-        <img src="icons/x.svg" alt="">
-      </a>
-      <a href="https://instagram.com/exitdeckapp" target="_blank" class="social-pill" aria-label="Instagram">
-        <img src="icons/instagram.svg" alt="">
-      </a>
-      <a href="https://tiktok.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="TikTok">
-        <img src="icons/tiktok.svg" alt="">
-      </a>
-      <a href="https://youtube.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="YouTube">
-        <img src="icons/youtube.svg" alt="">
-      </a>
-    </div>
-    <a class="cta" href="mailto:support@exitdeck.app">Contact</a>
-  </div>
-</nav>
+    <!-- Top Bar -->
+    <nav class="topbar">
+      <div class="site-tagline">The smarter way to plan crypto exits.</div>
 
-<!-- tagline -->
-<div class="site-tagline">The smarter way to plan crypto exits.</div>
- <section class="hero">
-  <!-- LEFT: Logo artwork card -->
-  <div class="panel panel-left">
-    <img src="hero.png" alt="ExitDeck preview" class="hero-art">
-  </div>
+      <div class="right">
+        <div class="socials">
+          <a href="https://x.com/exitdeckapp" target="_blank" class="social-pill" aria-label="X">
+            <img src="icons/x.svg" alt="">
+          </a>
+          <a href="https://instagram.com/exitdeckapp" target="_blank" class="social-pill" aria-label="Instagram">
+            <img src="icons/instagram.svg" alt="">
+          </a>
+          <a href="https://tiktok.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="TikTok">
+            <img src="icons/tiktok.svg" alt="">
+          </a>
+          <a href="https://youtube.com/@exitdeckapp" target="_blank" class="social-pill" aria-label="YouTube">
+            <img src="icons/youtube.svg" alt="">
+          </a>
+        </div>
+        <a class="cta" href="mailto:support@exitdeck.app">Contact</a>
+      </div>
+    </nav>
 
-  <!-- RIGHT: Headline card (no iCloud pill) -->
-  <div class="panel panel-right">
-    <h1>Master Your Exits. Protect Your Gains.</h1>
-    <p class="lead">
-      Track, plan, and execute tiered take-profits with confidence. Live alerts, DCA planning,
-      journal exports, and a clean Overview so you always know what to do next.
-    </p>
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- LEFT: Logo artwork card -->
+      <div class="panel panel-left">
+        <img src="hero.png" alt="ExitDeck preview" class="hero-art">
+      </div>
 
-    <!-- features -->
+      <!-- RIGHT: Headline card -->
+      <div class="panel panel-right">
+        <h1>Master Your Exits. Protect Your Gains.</h1>
+        <p class="lead">
+          Track, plan, and execute tiered take-profits with confidence. Live alerts, DCA planning,
+          journal exports, and a clean Overview so you always know what to do next.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features -->
     <section class="cards">
       <article class="card">
         <h3>Tiered Exit Matrix</h3>
@@ -179,17 +86,19 @@
       </article>
     </section>
 
-    <!-- gallery -->
+    <!-- Gallery -->
     <section class="gallery">
       <div class="device"><img src="screen1.png" alt="ExitDeck screen 1"></div>
       <div class="device"><img src="screen2.png" alt="ExitDeck screen 2"></div>
       <div class="device"><img src="screen3.png" alt="ExitDeck screen 3"></div>
     </section>
 
+    <!-- Footer -->
     <footer>
       © 2025 ExitDeck • <a href="mailto:support@exitdeck.app">support@exitdeck.app</a> •
       <a href="privacy.html">Privacy Policy</a> • <a href="press.html">Press Kit</a>
     </footer>
+
   </div>
 </body>
 </html>
