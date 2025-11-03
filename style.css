@@ -39,21 +39,6 @@ body::after {
   padding: 28px;
 }
 
-/* Card */
-.card {
-  background: rgba(17,26,47,0.8);
-  border: 1px solid rgba(157,209,255,0.15);
-  border-radius: 16px;
-  padding: 28px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-/* Links + Footer */
-a { color:#9bd1ff; text-decoration:none; transition:color .2s ease; }
-a:hover { color:#c8e4ff; }
-footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-size:14px; }
-
 /* ===================== */
 /* Top Bar */
 /* ===================== */
@@ -65,7 +50,6 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   padding:8px 0 6px;
 }
 
-/* Tagline inside topbar */
 .site-tagline {
   color:#cfe6ff;
   opacity:.9;
@@ -86,7 +70,8 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   width:140px;
 }
 
-/* Social Pills (Bright Idle) */
+.right { display:flex; align-items:center; gap:12px; }
+
 .socials {
   display:flex;
   gap:10px;
@@ -149,9 +134,8 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   min-height:360px;
   transition: transform 0.25s ease;
 }
-.panel:hover {
-  transform: translateY(-3px);
-}
+.panel:hover { transform: translateY(-3px); }
+
 .panel-left {
   background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.20));
   border:1px solid rgba(255,255,255,.07);
@@ -194,33 +178,14 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
 }
 
 /* ===================== */
-/* Responsive */
+/* Features grid */
 /* ===================== */
-@media (max-width:880px){
-  .hero {
-    grid-template-columns:1fr;
-  }
-  .panel {
-    min-height:unset;
-  }
-  .cta {
-    display:none;
-  }
-  .site-tagline {
-    font-size:12px;
-    letter-spacing:.06em;
-  }
-  .site-tagline::after {
-    margin-top:6px;
-  }
-}
-/* === Hotfix: features grid + card spacing === */
 .cards{
   display:grid;
   grid-auto-rows:auto;
   align-items:stretch;
-  gap:24px;                 /* ensure visible gaps */
-  margin-top:48px;          /* breathe under hero */
+  gap:24px;
+  margin-top:48px;
 }
 
 @media (min-width: 880px){
@@ -231,6 +196,7 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   .cards{ grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Single authoritative card style */
 .card{
   background: rgba(13,18,30,0.85);
   border: 1px solid rgba(157,209,255,0.14);
@@ -238,31 +204,38 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
   padding:24px 28px;
   backdrop-filter: blur(6px);
   box-shadow: 0 8px 26px rgba(0,0,0,0.28);
-  overflow:hidden;          /* keeps corners clean */
+  overflow:hidden;
 }
 
-/* Optional: subtler dividers on small screens */
-@media (max-width: 879px){
-  .cards{ grid-template-columns: 1fr; gap:18px; }
-}
-/* === Fix: limit gallery screenshot size === */
-.gallery .device img {
-  width: 100%;
-  max-width: 380px;         /* stops them getting huge */
-  margin: 0 auto;
-  display: block;
-  border-radius: 18px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-  object-fit: contain;
-}
-
-.gallery .device {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 18px;
+/* Screenshot block INSIDE each card */
+.card .device{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:16px;
+  margin-top:14px;
   background: linear-gradient(180deg,rgba(0,0,0,0.25),rgba(0,0,0,0.15));
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 22px;
+  border-radius: 20px;
   backdrop-filter: blur(6px);
+}
+.card .device img{
+  width:100%;
+  max-width:380px;       /* prevents huge images */
+  display:block;
+  border-radius:16px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.4);
+  object-fit:contain;
+}
+
+/* ===================== */
+/* Responsive */
+/* ===================== */
+@media (max-width:880px){
+  .hero { grid-template-columns:1fr; }
+  .panel { min-height:unset; }
+  .cta { display:none; }
+  .site-tagline { font-size:12px; letter-spacing:.06em; }
+  .site-tagline::after { margin-top:6px; }
+  .cards{ grid-template-columns:1fr; gap:18px; }
 }
