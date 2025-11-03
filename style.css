@@ -214,3 +214,34 @@ footer { margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-siz
     margin-top:6px;
   }
 }
+/* === Hotfix: features grid + card spacing === */
+.cards{
+  display:grid;
+  grid-auto-rows:auto;
+  align-items:stretch;
+  gap:24px;                 /* ensure visible gaps */
+  margin-top:48px;          /* breathe under hero */
+}
+
+@media (min-width: 880px){
+  .cards{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+
+@media (min-width: 1200px){
+  .cards{ grid-template-columns: repeat(3, 1fr); }
+}
+
+.card{
+  background: rgba(13,18,30,0.85);
+  border: 1px solid rgba(157,209,255,0.14);
+  border-radius:16px;
+  padding:24px 28px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.28);
+  overflow:hidden;          /* keeps corners clean */
+}
+
+/* Optional: subtler dividers on small screens */
+@media (max-width: 879px){
+  .cards{ grid-template-columns: 1fr; gap:18px; }
+}
