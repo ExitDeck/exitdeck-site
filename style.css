@@ -98,3 +98,26 @@ footer{ margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-size
   .site-tagline{ font-size:12px; letter-spacing:.06em; }
   .site-tagline::after{ margin-top:6px; }
 }
+/* === Screenshot size hard cap (final override) === */
+.cards { align-items: start; }
+
+.card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  overflow:hidden;
+}
+
+.card .shot{
+  display:block;
+  width: min(100%, 320px) !important;  /* cap width */
+  max-height: 480px !important;        /* prevent tall overflow */
+  height: auto !important;
+  object-fit: contain;
+  margin: 14px auto 6px;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.40);
+}
+
+/* guard against any global img rules */
+.card img.shot { max-width: 100% !important; height: auto !important; }
