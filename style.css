@@ -117,14 +117,15 @@ body::after{
   color:#e0eeff; max-width:62ch;
 }
 
-/* === App Store CTA styling === */
+/* === App Store CTA styling (fully centred) === */
 .appstore-cta {
   margin-top: 26px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  align-items: center;      /* centre horizontally */
-  text-align: center;       /* centre text */
+  align-items: center !important;      /* force centre */
+  justify-content: center !important;
+  text-align: center;
+  width: 100%;                         /* ensure full width for proper centering */
 }
 
 .appstore-cta span {
@@ -132,6 +133,9 @@ body::after{
   color: #e4f1ff;
   opacity: 0.92;
   letter-spacing: 0.2px;
+  display: block;
+  width: 100%;
+  text-align: center !important;
 }
 
 .appstore-button {
@@ -145,17 +149,17 @@ body::after{
   backdrop-filter:blur(14px);
   transition:all .25s ease;
   box-shadow:0 10px 28px rgba(0,0,0,0.32);
-  width:max-content;
+  margin-top: 6px;
 }
 
 .appstore-button:hover {
   background:linear-gradient(180deg,#0ea5ff,#4f46e5);
-  transform:translateY(-2px) scale(1.03);   /* lift + subtle scale */
+  transform:translateY(-2px) scale(1.03);
   box-shadow:0 14px 34px rgba(14,165,255,0.50);
 }
 
 .appstore-button img {
-  height: 48px;   /* slightly larger badge */
+  height: 48px;
   width: auto;
   display:block;
 }
