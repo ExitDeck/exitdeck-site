@@ -123,6 +123,8 @@ body::after{
   display: flex;
   flex-direction: column;
   gap: 14px;
+  align-items: center;      /* centre horizontally */
+  text-align: center;       /* centre text */
 }
 
 .appstore-cta span {
@@ -148,12 +150,12 @@ body::after{
 
 .appstore-button:hover {
   background:linear-gradient(180deg,#0ea5ff,#4f46e5);
-  transform:translateY(-2px);
+  transform:translateY(-2px) scale(1.03);   /* lift + subtle scale */
   box-shadow:0 14px 34px rgba(14,165,255,0.50);
 }
 
 .appstore-button img {
-  height: 46px;
+  height: 48px;   /* slightly larger badge */
   width: auto;
   display:block;
 }
@@ -187,11 +189,6 @@ footer{ margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-size
   .cta{ display:none; }
   .site-tagline{ font-size:12px; letter-spacing:.06em; }
   .site-tagline::after{ margin-top:6px; }
-
-  .appstore-cta {
-    align-items:center;
-    text-align:center;
-  }
 }
 
 /* Screenshot cap override */
