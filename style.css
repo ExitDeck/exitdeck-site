@@ -118,12 +118,13 @@ body::after{
 }
 
 /* === App Store CTA styling (fully centred) === */
-/* Force CTA to appear lower and truly centred */
+/* Force CTA to sit low in the card and centred */
 .appstore-cta {
-  margin-top: 52px;                /* pushes CTA down to balance the card */
+  margin-top: auto;             /* pushes CTA down the card */
+  margin-bottom: 48px;          /* gap from bottom edge */
   display: flex;
   flex-direction: column;
-  align-items: center !important;  /* center horizontally */
+  align-items: center;          /* center horizontally in the card */
   justify-content: center;
   width: 100%;
   text-align: center;
