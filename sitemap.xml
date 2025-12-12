@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://yourdomain.com/</loc></url>
-  <url><loc>https://yourdomain.com/privacy.html</loc></url>
-  <url><loc>https://yourdomain.com/support.html</loc></url>
+  <url>
+    <loc>https://exitdeck.app/</loc>
+  </url>
+  <url>
+    <loc>https://exitdeck.app/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://exitdeck.app/press.html</loc>
+  </url>
 </urlset>
