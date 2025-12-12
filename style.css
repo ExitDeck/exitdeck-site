@@ -336,3 +336,90 @@ footer{ margin-top:36px; text-align:center; opacity:.8; color:#a7b0be; font-size
     font-size: 22px;
   }
 }
+/* ========================= */
+/* CTA strip + reassurance   */
+/* ========================= */
+
+.cta-strip {
+  margin-top: 40px;
+}
+
+.cta-strip-inner {
+  border-radius: 18px;
+  padding: 22px 24px;
+  background: radial-gradient(circle at 0% 0%, rgba(14,165,255,0.25), transparent 55%),
+              radial-gradient(circle at 100% 100%, rgba(79,70,229,0.25), transparent 55%),
+              rgba(5,10,22,0.92);
+  border: 1px solid rgba(157,209,255,0.28);
+  box-shadow: 0 14px 44px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.cta-strip-inner h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.cta-strip-inner p {
+  margin: 4px 0 0;
+  max-width: 70ch;
+  color: #dbe6f5;
+}
+
+.cta-strip-actions {
+  margin-top: 14px;
+}
+
+/* Reassurance text block */
+.reassure {
+  margin-top: 28px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(6,10,22,0.86);
+  border: 1px dashed rgba(157,209,255,0.35);
+  color: #c8d7f2;
+  font-size: 14px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 880px) {
+  .cta-strip-inner {
+    padding: 18px 18px 20px;
+  }
+  .cta-strip-inner h2 {
+    font-size: 22px;
+  }
+}
+/* Privacy / legal card */
+.policy-card {
+  width: 100%;
+  background: rgba(11,17,32,0.9);
+  border-radius: 20px;
+  border: 1px solid rgba(157,209,255,0.22);
+  padding: 32px 28px;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  line-height: 1.7;
+  color: #f4f7fb;
+}
+
+.policy-card h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+.policy-card h2 {
+  margin-top: 22px;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.policy-card p,
+.policy-card li {
+  color: #dbe6f5;
+  font-size: 15px;
+}
